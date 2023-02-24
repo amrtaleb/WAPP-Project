@@ -1,0 +1,40 @@
+﻿:root {
+	--textAdjust: 1;
+}
+
+@media (min-width: 600px) {
+	:root {
+		--textAdjust: 1.25;
+	}
+}
+
+@media (min-width:900px) {
+	:root {
+		--textAdjust: 1.5;
+	}
+}
+
+.bg_img{
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.main{
+	height:87vh;
+	padding:60px;
+	text-align:left;
+}
+
+h1{
+	font-size: calc(40px * var(--textAdjust));	
+	font-weight:bold;
+}
+
+h2{
+	font-size: calc(24px * var(--textAdjust));
+}
+
+p{
+	font-size: calc(14px * var(--textAdjust));
+}
