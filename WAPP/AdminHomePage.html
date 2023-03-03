@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SpeakEase for Kids</title>
+    <link rel="icon"
+      href="https://marketplace.canva.com/EAFDHYDiMAM/4/0/1600w/canva-colorful-cute-kids-playground-%26-kindergarten-logo-n9HJdV3E-q4.jpg"
+      type="image/png">
+  
+    <!--link to css-->
+    <link href="css/styling.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/forms.css" rel="stylesheet" type="text/css" />
+    <link href="css/homepage.css" rel="stylesheet" type="text/css" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+  
+    <!--link to jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="js/jQeury.js"></script>
+    <script src="js/homepage.js"></script>
+  </head>
+  
+    
+    <style>
+      body {
+        background-image: url("img/in-shape-fitness.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      #content {
+        background-color: black;
+        height: 100%;
+        position: fixed;
+        opacity: 0.7;
+      }
+    </style>
+    
+    <script>
+      $(document).ready(function() {
+
+      });
+
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </head>
+
+  <!--scroll to top button-->
+  <button id="scrollUp" title="Go To Top">^</button>
+
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <li><i class="fas fa-users"></i><a href="ViewUser.aspx">ViewUser</a></li>
+        <li><i class="fas fa-male"></i><a href="ViewFeedback.aspx">ViewFeedback</a></li>
+        
+    </div>
+
+    <section id="interface">
+        <div class="navigation">
+            <div id="navbarlogo" style="display: flex;">	
+                <a href="AdminHomePage.html" ><img src="https://marketplace.canva.com/EAFDHYDiMAM/4/0/1600w/canva-colorful-cute-kids-playground-%26-kindergarten-logo-n9HJdV3E-q4.jpg"
+                    width=70px height=90px /></a>
+                <span style="font-size:40px;cursor:pointer;margin-left: 5px;margin-top:30px" onclick="openNav()">&#9776;</span>
+                
+            </div>	
+        </div>
+    </section>
+
+    <section id="content">
+        <h1 id="heading">SpeakEase</h1>
+        <p id="admin-heading">Admin Homepage</p>
+    </section>
+   
+    <script>
+    $(document).ready(function() {
+
+    });
+    
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    
+    </script>
+</body>

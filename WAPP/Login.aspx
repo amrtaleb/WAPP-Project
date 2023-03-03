@@ -132,7 +132,7 @@
         <span id="fgtPw"><a href="fgtPassword.aspx">Forgot Password?</a></span><br /><br />
 
         User Role<br />
-        <select id="role">
+        <select id="role" runat="server">
           <option value="Member" selected>Member</option>
           <option value="Admin">Admin</option>
         </select><br /><br />

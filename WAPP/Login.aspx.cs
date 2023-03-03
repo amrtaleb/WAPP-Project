@@ -23,7 +23,9 @@ namespace WAPP
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
-            string query = "SELECT * FROM userData WHERE Username = '" + username.Text + "' AND Password = '" + password1.Text + "'";
+            var role = Request.Form["role"];
+
+            string query = "SELECT * FROM userData WHERE Username = '" + username.Text + "' AND Password = '" + password1.Text +"' AND role = '" + role + "'";
             SqlCommand command = new SqlCommand(query, conn);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
@@ -43,17 +45,27 @@ namespace WAPP
                     Session["Date_of_Birth"] = Date_of_Birth;
                     Session["Contact_No"] = Contact_No;
                     Session["Email_Address"] = email;
+                    Session["role"] = role;
                 }
 
                 // Welcome message
                 Session["success"] = "You have logged in!";
 
-                Response.Redirect("HomePage.aspx");
+                if(role == "Admin")
+                {
+                    Response.Redirect("AdminHomePage.html");
+                }
+                else
+                {
+
+                    Response.Redirect("HomePage.aspx");
+                }
+
             }
             else
             {
 
-                Response.Write("invalid_credentials");
+                Response.Write(role);
             }
 
         }

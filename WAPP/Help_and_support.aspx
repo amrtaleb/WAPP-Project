@@ -52,6 +52,7 @@
       <a id="registerLink" href="Register.aspx">Register</a>
       <a href="Help_and_support.aspx">Help and support</a>
       <a id="infoLink" hidden="hidden" href="Personal_Information.aspx">Personal Information</a>
+		<a id="admin" hidden="hidden" href="AdminHomePage.html">Admin</a>
       <a href="javascript:void(0);" class="icon" onclick="burgerNav()">
         <i class="fa fa-bars"></i></a>
     </nav>
@@ -271,7 +272,8 @@
 			var sessionValue = '<%= Session["user_id"] %>';
             var username = '<%= Session["username"] %>';
             var fullname = '<%= Session["Full_Name"] %>';
-            var email = '<%= Session["Email_Address"] %>';
+			var email = '<%= Session["Email_Address"] %>';
+            var role = '<%= Session["role"] %>';
 			if (sessionValue === '') {
 
 			}
@@ -282,6 +284,10 @@
 				$('#feedback').prop("hidden", false);
 				$('#name').prop("value", username);
 				$('#email').prop("value", email);
+                if (role === 'Admin') {
+
+                    $('#admin').prop("hidden", false);
+                }
 			}
             $('#ss').click(function () {
                 var username = '<%= Session["username"] %>';

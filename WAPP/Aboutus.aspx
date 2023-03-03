@@ -44,6 +44,7 @@
             <a id="registerLink" href="Register.aspx">Register</a>
             <a href="Help_and_support.aspx">Help and support</a>
             <a id="infoLink" hidden="hidden" href="Personal_Information.aspx">Personal Information</a>
+			<a id="admin" hidden="hidden" href="AdminHomePage.html">Admin</a>
             <a href="javascript:void(0);" class="icon" onclick="burgerNav()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -242,6 +243,7 @@
 
 		//AJAX form submission
 		var sessionValue = '<%= Session["user_id"] %>';
+        var role = '<%= Session["role"] %>';
 		if (sessionValue === '') {
 
 		}
@@ -249,12 +251,18 @@
 			$('#registerLink').prop("hidden", true);
 			$('#courseLink').prop("hidden", false);
 			$('#infoLink').prop("hidden", false);
+            if (role === 'Admin') {
+
+                $('#admin').prop("hidden", false);
+            }
 		}
+
 
         $('#ss').click(function () {
             var username = '<%= Session["username"] %>';
              var fullname = '<%= Session["Full_Name"] %>';
-             var email = '<%= Session["Email_Address"] %>';
+			var email = '<%= Session["Email_Address"] %>';
+            
              if (sessionValue === '') {
                  window.location.href = 'Register.aspx';
 
@@ -263,7 +271,8 @@
                  $("#usernameVal").text(username);
                  $("#fullnameVal").text(fullname);
                  $("#emailVal").text(email);
-                 $('#userData').show();
+				 $('#userData').show();
+                 
              }
 
          });
